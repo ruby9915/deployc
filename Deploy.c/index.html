@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>한성테크</title>
+    <style>
+        /* 네비바 스타일 */
+        /* 네비바 스타일 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #bec1c2;
+            transition: height 0.3s ease-in-out;
+            display: flex;
+            align-items: center; /* 수직 가운데 정렬 */
+        }
+
+        .navbar-menu {
+            margin-left: auto;
+        }
+
+        
+        .navbar:hover {
+            height: 80px;
+        }
+        
+        .navbar img {
+            width: auto;
+            height: 60px; /* 이미지의 높이를 조절하여 네비바에 맞게 설정해주세요 */
+            margin: 0 20px; /* 로고 이미지와 메뉴 간의 여백 설정 */
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            
+        }
+        
+        /* 메인 이미지 스타일 */
+        .main-image {
+            width: 100%;
+            height: 120%;
+            object-fit: contain;
+        }
+
+
+        .company-info {
+    position: absolute;
+    top: 35%; /* 이미지의 중앙에 위치 */
+    left: 25%; /* 이미지의 중앙에 위치 */
+    transform: translate(-50%, -50%); /* 가운데 정렬 */
+    background-color: rgba(255, 255, 255, 0.0); /* 투명한 배경색 */
+    padding: 10px;
+    text-align: center;
+    z-index: 100; /* 다른 요소보다 위에 표시되도록 설정 */
+}
+
+.navbar .menu li:hover {
+    background-color: #333333;
+  /* 추가적인 스타일을 적용할 수 있습니다. */
+  /* color: #ffffff; (텍스트 색상 변경 예시) */
+  /* font-weight: bold; (텍스트 굵게 변경 예시) */
+}
+
+
+.company-info p {
+    margin: 0;
+}
+
+.company-info h3 {
+    color: white; /* 흰색 텍스트로 설정 */
+}
+
+.company-info h6{
+    color: white;
+    font-size: 35px
+}
+
+        
+        /* footer 스타일 */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #bec1c2;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+    <script>
+// 네비바 높이 조절
+window.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar.offsetHeight;
+    const navbarImage = document.querySelector(".navbar img");
+    const defaultImageHeight = 60; // 이미지의 기본 높이 설정
+    
+    document.addEventListener("mousemove", function(e) {
+    if (e.clientY < navbarHeight) {
+        navbar.style.height = "80px";
+      navbarImage.style.height = `${defaultImageHeight + 20}px`; // 네비바 확장 시 이미지 높이 조절
+    } else {
+        navbar.style.height = "40px";
+        navbarImage.style.height = `${defaultImageHeight}px`; // 네비바 축소 시 이미지 높이 조절
+    }
+});
+});
+        
+        // 메인 이미지 변경
+        window.addEventListener("DOMContentLoaded", function() {
+            const mainImage = document.querySelector(".main-image");
+            const images = ["image/main-visual3.jpg", "image/main-visual1.jpg",]; // 이미지 파일명 수정 필요
+            
+            let imageIndex = 0;
+            
+            function changeImage() {
+                mainImage.src = images[imageIndex];
+                imageIndex = (imageIndex + 1) % images.length;
+            }
+            
+            setInterval(changeImage, 3000); // 이미지 변경 주기(ms) 수정 가능
+        });
+    </script>
+</head>
+<body>
+    <!-- 네비바 -->
+    <nav class="navbar">
+        <a href="/index.html" class="logo">
+            <img src="/image/HStech_logo.png" alt="">
+        </a>
+        <div class="navbar-menu">
+            <a href="/Pr.html">대표 소개</a>
+            <a href="/poeple.html">조직도</a>
+            <a href="/cs.html">고객센터</a>
+            <a href="/map.html">오시는 길</a>
+        </div>
+    </nav>
+
+    
+    
+    <!-- 메인 화면 -->
+    <img class="main-image" src="image1.jpg"> <!-- 메인 이미지 파일명 수정 필요 -->
+    
+    <!-- 회사 소개문구 -->
+    <div class="company-info">
+        <p>
+            <H6>
+                SAL랩은 항상 최고를 추구합니다.
+            </H6>
+            <br>
+            <H3>
+                producted by SAL.Lab 
+            </H3>
+        </p>
+    </div>
+    
+    <!-- footer -->
+    <footer>
+        &copy; 2023 DSU. All rights reserved.
+    </footer>
+</body>
+</html>

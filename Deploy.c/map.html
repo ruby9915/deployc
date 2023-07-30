@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>한성테크</title>
+    <style>
+        /* 네비바 스타일 */
+        /* 네비바 스타일 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #bec1c2;
+            transition: height 0.3s ease-in-out;
+            display: flex;
+            align-items: center; /* 수직 가운데 정렬 */
+            z-index: 3;
+        }
+
+        .navbar-menu {
+            margin-left: auto;
+        }
+
+        
+        .navbar:hover {
+            height: 80px;
+        }
+        
+        .navbar img {
+            width: auto;
+            height: 60px; /* 이미지의 높이를 조절하여 네비바에 맞게 설정해주세요 */
+            margin: 0 20px; /* 로고 이미지와 메뉴 간의 여백 설정 */
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            
+        }
+        
+        /* 메인 이미지 스타일 */
+        .main-image {
+            width: 100%;
+            height: 120%;
+            object-fit: contain;
+        }
+
+        .yhb {
+            position: absolute;
+            z-index: 1;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80%;
+            background-color: #bec1c2;
+            border-radius: 5%/10%;
+            margin-top: 5%;
+            margin-bottom: 10%;
+            margin-block-end: 5% ;
+            margin-block-start: 5%;
+            }
+
+        #map{
+            z-index: 2;
+            display: flex;
+            left: 29%;
+            margin: 200px;
+            }
+
+        #A2{
+            z-index: 2;
+            display: flex;
+            position: absolute;
+            height: 200px;
+            top: 70%;
+            left: 30%;
+            font-size: 30px;
+            font-weight: bold;
+            }
+
+        #A3{
+            z-index: 2;
+            display: flex;
+            position: absolute;
+            top: 45%;
+            left: 18%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #A4{
+            z-index: 2;
+            display: flex;
+            position: absolute;
+            height: 350px;
+            top: 23%;
+            left: 60%;
+        }
+
+        #A5{
+            z-index: 2;
+            display: flex;
+            position: absolute;
+            top: 60%;
+            left: 60%;
+            font-size: 50px;
+            font-weight: bolder;
+        }
+
+.company-info p {
+    margin: 0;
+}
+
+.company-info h3 {
+    color: white; /* 흰색 텍스트로 설정 */
+}
+
+.company-info h6{
+    color: white;
+    font-size: 35px
+}
+
+        
+        /* footer 스타일 */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #bec1c2;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+
+
+    </style>
+    <script>
+// 네비바 높이 조절
+window.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar.offsetHeight;
+    const navbarImage = document.querySelector(".navbar img");
+    const defaultImageHeight = 60; // 이미지의 기본 높이 설정
+    
+    document.addEventListener("mousemove", function(e) {
+    if (e.clientY < navbarHeight) {
+        navbar.style.height = "80px";
+      navbarImage.style.height = `${defaultImageHeight + 20}px`; // 네비바 확장 시 이미지 높이 조절
+    } else {
+        navbar.style.height = "40px";
+        navbarImage.style.height = `${defaultImageHeight}px`; // 네비바 축소 시 이미지 높이 조절
+    }
+});
+});
+
+function initMap() {
+        var mapOptions = {
+            center: {lat: 35.2325003, lng: 129.0843707},
+            zoom: 15
+        };
+
+        var mapElement = document.getElementById("map");
+        var map = new google.maps.Map(mapElement, mapOptions);
+    }
+
+    // 페이지가 로드되면 initMap 함수를 호출하여 지도를 초기화합니다.
+    window.onload = initMap;
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCziFe10o4JVDVeObWmiRjh1rDgLkmQ5s"></script>
+</head>
+<body>
+    <!-- 네비바 -->
+    <nav class="navbar">
+        <a href="/index.html" class="logo">
+            <img src="/image/HStech_logo.png" alt="">
+        </a>
+        <div class="navbar-menu">
+            <a href="/Pr.html">대표 소개</a>
+            <a href="/poeple.html">조직도</a>
+            <a href="/cs.html">고객센터</a>
+            <a href="/map.html">오시는 길</a>
+        </div>
+    </nav>
+
+    <div class="yhb">
+
+    </div>
+
+    <div id="map" style="width:40vh; height:40vh;"></div>
+
+    <script>
+        function initMap() {
+            var mapOptions = {
+                center: {lat: 37.5665, lng: 126.9780},
+                zoom: 15
+            };
+    
+            var mapElement = document.getElementById("map");
+            var map = new google.maps.Map(mapElement, mapOptions);
+        }
+    
+        // 페이지가 로드되면 initMap 함수를 호출하여 지도를 초기화합니다.
+        window.onload = initMap;
+        </script>
+
+    <div id="A2">
+        <p>
+            *부산광역시 사상구 주례제2동 동서대학교 뉴밀레니엄관
+        </p>
+    </div>
+
+    <div id="A3">
+    </div>
+
+    <div id="A4">
+
+    </div>
+
+    <div id="A5">
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+        &copy; 2023 DSU. All rights reserved.
+    </footer>
+</body>
+</html>

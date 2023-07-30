@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>한성테크</title>
+    <style>
+        /* 네비바 스타일 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #bec1c2;
+            transition: height 0.3s ease-in-out;
+        }
+        
+        .navbar:hover {
+            height: 60px;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+        }
+        
+        /* 메인 이미지 스타일 */
+        .main-image {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* footer 스타일 */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // 네비바 높이 조절
+        window.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.querySelector(".navbar");
+            const navbarHeight = navbar.offsetHeight;
+            
+            document.addEventListener("mousemove", function(e) {
+                if (e.clientY < navbarHeight) {
+                    navbar.style.height = "60px";
+                } else {
+                    navbar.style.height = "20px";
+                }
+            });
+        });
+        
+        // 메인 이미지 변경
+        window.addEventListener("DOMContentLoaded", function() {
+            const mainImage = document.querySelector(".main-image");
+            const images = ["image1.jpg", "image2.jpg", "image3.jpg"]; // 이미지 파일명 수정 필요
+            
+            let imageIndex = 0;
+            
+            function changeImage() {
+                mainImage.src = images[imageIndex];
+                imageIndex = (imageIndex + 1) % images.length;
+            }
+            
+            setInterval(changeImage, 3000); // 이미지 변경 주기(ms) 수정 가능
+        });
+    </script>
+</head>
+<body>
+    <!-- 네비바 -->
+    <nav class="navbar">
+        <a href="#" class="logo">한성테크</a>
+        <div class="navbar-menu">
+            <a href="#">회사 소개</a>
+            <a href="#">조직도</a>
+            <a href="#">고객센터</a>
+            <a href="#">오시는 길</a>
+        </div>
+    </nav>
+    
+    <!-- 메인 화면 -->
+    <img class="main-image" src="image1.jpg"> <!-- 메인 이미지 파일명 수정 필요 -->
+    
+    <!-- 회사 소개문구 -->
+    <div class="company-info">
+        <!-- 회사 소개문구 작성 -->
+    </div>
+    
+    <!-- footer -->
+    <footer>
+        &copy; 2023 한성테크. All rights reserved.
+    </footer>
+</body>
+</html>
